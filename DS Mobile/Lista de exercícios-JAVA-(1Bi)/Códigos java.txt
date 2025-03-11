@@ -326,11 +326,131 @@ public class Main {
 }
 
 EXERCÍCIO 19
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.println("Digite sua primeira nota: ");
+        double nota1 = scanner.nextDouble();
+        System.out.println("Digite sua segunda nota: ");
+        double nota2 = scanner.nextDouble();
+        double media_aluno = (nota1 + nota2) / 2;
+        System.out.println("Olá, " + nome + "sua média é: " + media_aluno);
+        
+        if (media_aluno >= 7.0 ) {
+            System.out.println("O aluno " + nome + "foi aprovado!");
+        } else {
+            System.out.println("O aluno " + nome + "foi reprovado.");
+        }
+        scanner.close();
+    }
+}
+
 EXERCÍCIO 20
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite um número: ");
+        int num = scanner.nextInt();
+        
+        if (num % 2 == 0) {
+            System.out.println("O número " + num + " é par");
+        } else {
+            System.out.println("O número " + num + " é ímpar");
+        }
+        scanner.close();
+    }
+}
+
 EXERCÍCIO 21
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite um ano: ");
+        int ano = scanner.nextInt();
+        
+        if (ano % 4 == 0) {
+            System.out.println("O ano " + ano + " é bissexto ");
+        } else {
+            System.out.println("O ano " + ano + " não é bissexto ");
+        }
+        scanner.close();
+    }
+}
+
 EXERCÍCIO 22
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu ano de nascimento: ");
+        int ano_nasc = scanner.nextInt();
+        System.out.println("Digite o ano atual: ");
+        int ano_atual = scanner.nextInt();
+        int idade = ano_atual - ano_nasc;
+        
+        if (idade < 18) {
+            int anos = 18 - idade;
+            System.out.println("Faltam " + anos + " anos para você se alistar");
+        } else if (idade > 18) {
+            int anos = idade - 18;
+            System.out.println("Você se alistou à " + anos + " anos");
+        } else {
+            System.out.println("Você deve se alistar este ano!");
+        }
+    }
+}
+
 EXERCÍCIO 23
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.println("Qual seu sexo? (Digite M para masculino ou F para feminino)");
+        char sexo = scanner.next().toUpperCase().charAt(0);
+        System.out.println("Digite o valor total da sua compra: R$ ");
+        double valor_total = scanner.nextDouble();
+        double desconto = 0;
+
+        if (sexo == 'M') {
+            desconto = valor_total * 0.05;
+        } else if (sexo == 'F') {
+            desconto = valor_total * 0.13;
+        } else  {
+            System.out.println("Não reconhecido. Favor digitar um termo válido.");
+            scanner.close();
+            return;
+        }
+            double valor_final = valor_total - desconto;
+
+            System.out.println("Olá, " + nome + " o valor da sua compra é sem desconto era de  R$ " + String.format("%.2f", valor_total));
+            System.out.println("O valor do desconto foi de R$ " + String.format("%.2f", desconto));
+            System.out.println("O valor final da sua compra é de R$ " + String.format("%.2f", valor_final));
+            System.out.println("Obrigado pela preferência!");  
+            scanner.close();          
+    }
+}
+
 EXERCÍCIO 24
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Passageiro(a), informe a distância, em Km (quilômetros), que deseja percorrer");
+        double distancia = scanner.nextDouble();
+        double preco_km = (distancia <= 200) ? 0.5 : 0.45;
+        double preco_corrida = distancia * preco_km;
+        System.out.println("O preço da sua passagem é: R$ " + String.format("%.2f",preco_corrida));
+        scanner.close();
+    }
+}
+
 EXERCÍCIO 25
 EXERCÍCIO 26
 
@@ -380,7 +500,54 @@ public class Main {
 }
 
 EXERCÍCIO 28
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite a largura do terreno, em metros: ");
+        double largura = scanner.nextDouble();
+        System.out.println("Digite o comprimento do terreno, em metros: ");
+        double comprimento = scanner.nextDouble();
+        int area = (int) (largura * comprimento);
+        System.out.println("A área do terreno é: " + area + "m²");
+        
+        if (area <= 100) {
+            System.out.println("O terreno é um terreno popular");
+        } else if (area > 100 && area <= 500) {
+            System.out.println("O terreno é um terreno master");
+        } else {
+            System.out.println("O terreno é um terreno VIP");
+        scanner.close();
+        }
+    }
+}
+
 EXERCÍCIO 29
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu nome: ");
+        String nome = scanner.nextLine();
+        System.out.println("Digite seu salário: R$ ");
+        double salario = scanner.nextDouble();
+        System.out.println("Digite a quantos anos você trabalha na empresa: ");
+        int anos_trabalho = scanner.nextInt();
+        double aumento;
+
+        if ( anos_trabalho <= 3) {
+            aumento = anos_trabalho * 0.03;
+        } else if (anos_trabalho > 3 && anos_trabalho <= 10) {
+            aumento = anos_trabalho * 0.125;
+        } else {
+            aumento = anos_trabalho * 0.20;
+        }
+            double novo_salario = salario * aumento;
+            System.out.println("Olá, " + nome + " seu salário atual é de R$ " + String.format("%.2f", novo_salario));
+            scanner.close();          
+    }
+}
+
 EXERCÍCIO 30
 EXERCÍCIO 31
 EXERCÍCIO 32
