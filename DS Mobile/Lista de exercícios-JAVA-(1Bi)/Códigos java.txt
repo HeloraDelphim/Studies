@@ -1,0 +1,391 @@
+Códigos java
+
+EXERCÍCIO 1
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 1:
+		System.out.println("Olá, Mundo!");
+	}
+}
+
+EXERCÍCIO 2
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 2:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite seu nome");
+		String nome = scanner.nextLine();
+		System.out.println("Olá " + nome + ", é um prazer te conhecer!");
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 3
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 3:
+        Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite seu nome");
+		String nome2 = scanner.nextLine();
+		System.out.println("Digite seu salário");
+		double sal = scanner.nextDouble();
+		scanner.nextLine();
+		System.out.println("Nome do funcionário:" + nome2);
+		System.out.println("Salário do funcionário: " + sal);
+		System.out.println(nome2 + " teve no mês passado um salário de: R$ " + sal + ",00");
+		scanner.close();
+	}
+}
+  
+EXERCÍCIO 4
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 4:
+        Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite um número");
+		double X = scanner.nextDouble();
+		System.out.println("Digite outro número");
+		double Y = scanner.nextDouble();
+		System.out.println("A soma desses números é: " + (X + Y));
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 5
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 5:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite a primeira nota:");
+		float nota1 = scanner.nextFloat();
+		System.out.println("Digite a segunda nota:");
+		float nota2 = scanner.nextFloat();
+		System.out.println("Nota 1: "  + nota1);
+		System.out.println("Nota 2: " + nota2);
+		System.out.println("A média entre as notas é: " + ((nota1 + nota2)/2));
+		scanner.close();
+	}
+} 
+
+EXERCÍCIO 6
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 6:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite um número inteiro:");
+		int num = scanner.nextInt();
+		System.out.println("O antecessor desse número é: " + (num-1));
+		System.out.println("O sucessor desse número é: " + (num+1));
+		scanner.close();
+	}
+}    
+
+EXERCÍCIO 7
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 7:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite um número real:");
+		double num = scanner.nextDouble();
+		System.out.println("O dobro desse número é: " + (num*2));
+		System.out.println("A terça parte desse número é: " + (num/3));
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 8
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 8:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Escreva uma distância em metros: ");
+		double distMetros = scanner.nextDouble();
+		System.out.println("A distancia de " + distMetros + " metros corresponde a:");
+		System.out.println((distMetros/1000) + "Km");
+		System.out.println((distMetros/100) + "Hm");
+		System.out.println((distMetros/10) + "Dam");
+		System.out.println((distMetros*10) + "dm");
+		System.out.println((distMetros*100) + "cm");        
+		System.out.println((distMetros*1000) + "mm");
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 9
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 9:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Quanto dinheiro você tem em sua carteira?");
+        float dinheCarteira = scanner.nextFloat();
+        System.out.println("Você tem R$" + dinheCarteira + " em sua carteira");
+        System.out.println("Em dolares você teria US$" + (dinheCarteira/3.45));
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 10
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 10:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Qual a largura da parede que deseja pintar?");
+        double largura = scanner.nextDouble();
+        System.out.println("Qual a altura da parede que deseja pintar?");
+        double altura = scanner.nextDouble();
+        double area = (largura*altura);
+        System.out.println("A área a ser pintada dessa parede mede " + area + "m²");
+        System.out.println("Serão necessários " + (area/2) + "L de tinta para pintar essa parede");
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 11
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 11:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Qual o valor de A");
+        double A = scanner.nextDouble();
+        System.out.println("Qual o valor de B");
+        double B = scanner.nextDouble();
+        System.out.println("Qual o valor de C");
+        double C = scanner.nextDouble();
+        double equacaoDelta = ((B*B)-4*(A*C));
+        System.out.println("O valor de delta nessa equacao é: " + equacaoDelta);
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 12
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 12:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Qual o valor do produto desejado?");
+        float precoBase = scanner.nextInt();
+        float desconto = ((precoBase*5)/100);
+        float precoFinal = (precoBase-desconto);
+        System.out.println("O preço promocional desse produto (com 5% de desconto) é: " + precoFinal);
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 13
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 13:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Qual o seu salário?");
+        float salarioBase = scanner.nextInt();
+        float aumento = ((salarioBase*15)/100);
+        float salarioFinal = (salarioBase+aumento);
+        System.out.println("O salário final (com 15% de aumento) é: " + salarioFinal);
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 14
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 14:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Quantos Kms foram percorridos neste carro?");
+        float kms = scanner.nextFloat();
+        System.out.println("Por quantos dias este carro foi usado?");
+        int dias = scanner.nextInt();
+        int totalDias = (90*dias);
+        double totalKms = (0.20*kms);
+        double total = (totalDias+totalKms);
+        System.out.println("O cliente deverá pagar R$" +total);
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 15
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        //Ex 15:
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Quantos dias o funcionário trabalhou neste mês?");
+        int dias = scanner.nextInt();
+        int horasTrabalhoMes = (dias*8);
+        int salario = (horasTrabalhoMes*25);
+        System.out.println("O funcionário deverá receber R$" + salario);
+        scanner.close();
+    }
+}
+
+EXERCÍCIO 16
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 16:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Quantos cigarros você fuma por dia?");
+		double quantCigarros = scanner.nextDouble();
+		System.out.println("A quantos anos você fuma?");
+		double anosFumando = scanner.nextDouble();
+		double quantEmDia = ((quantCigarros*10)/1440);
+		double anoEmDia = (anosFumando*365);
+		double tempoPerdido = (anoEmDia*quantEmDia);
+		System.out.println("Você perdeu " + tempoPerdido + " dias de vida.");
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 17
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 17:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Qual a velocidade do carro?");
+		float velocidade = scanner.nextFloat();
+		if (velocidade>80) {
+			double multa = (velocidade-80)*5;
+			System.out.println("Você foi multado por exceder o limite de velocidade");
+			System.out.println("O valor cobrado é de: R$" + multa);
+		} else {
+			System.out.println("Você esta dentro do limite de velocidade permitido");
+		}
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 18
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 18:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Em que ano você nasceu?");
+		double anoNascimento = scanner.nextDouble();
+		double idade = 2025-anoNascimento;
+		if (idade<16) {
+			System.out.println("Você ainda não pode votar, mas fique antenado para quando puder!");
+		} else if (idade>=16 && idade<18) {
+			System.out.println("Você já pode tirar seu título de eleitor (lembre que o voto não é obrigatório, mas é importante)");
+		} else	{
+			System.out.println("Você já pode votar, e seu voto é obrigatório!");
+
+		}
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 19
+EXERCÍCIO 20
+EXERCÍCIO 21
+EXERCÍCIO 22
+EXERCÍCIO 23
+EXERCÍCIO 24
+EXERCÍCIO 25
+EXERCÍCIO 26
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 26:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Digite um número");
+		int A = scanner.nextInt();
+		System.out.println("Digite outro número");
+		int B = scanner.nextInt();
+		if (A==B) {
+			System.out.println("Ambos os valores são iguais");
+		} else if (A<B) {
+			System.out.println("O segundo valor é maior");
+		} else if (A>B) {
+			System.out.println("O primeiro valor é maior");
+		}
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 27
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 26:
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Qual a primeira nota do aluno?");
+		double nota1 = scanner.nextDouble();
+		System.out.println("Qual a segunda nota do aluno?");
+		double nota2 = scanner.nextDouble();
+		double media = (nota1+nota2)/2;
+		if (media<5) {
+			System.out.println("REPROVADO");
+		} else if (media>=5 && media<7) {
+			System.out.println("RECUPERAÇÃO");
+		} else if (media>=7) {
+			System.out.println("APROVADO");
+		}
+		scanner.close();
+	}
+}
+
+EXERCÍCIO 28
+EXERCÍCIO 29
+EXERCÍCIO 30
+EXERCÍCIO 31
+EXERCÍCIO 32
+EXERCÍCIO 33
+EXERCÍCIO 34
+EXERCÍCIO 35
+EXERCÍCIO 36
+EXERCÍCIO 37
