@@ -552,7 +552,147 @@ EXERCÍCIO 30
 EXERCÍCIO 31
 EXERCÍCIO 32
 EXERCÍCIO 33
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o valor da casa: ");
+        double preco_casa = scanner.nextDouble();
+        System.out.println("Digite o valor do seu salário líquido: ");
+        double salario = scanner.nextDouble(); 
+        System.out.println("Digite em quantos anos irá pagar o empréstimo: ");
+        int anos = scanner.nextInt();
+        if (preco_casa / (anos * 12) > salario * 0.3) {
+            System.out.println("Infelizmente seu empréstimo foi negado.");
+        } else {
+            System.out.println("Seu empréstimo foi aprovado!");
+            
+        }                 
+    }
+}
+
 EXERCÍCIO 34
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu peso atual: ");
+        double peso = scanner.nextDouble();
+        System.out.println("Digite sua altura atual: ");
+        double altura = scanner.nextDouble();
+        double imc = peso / (altura * altura);
+        System.out.println("Seu IMC é: " + String.format("%.2f", imc));
+        if (imc < 18.5) {
+            System.out.println("Você está baixo do peso! Preste atenção!");
+        } else if (imc <= 25) {
+            System.out.println("Você está com o peso ideal! Parabéns!");
+        } else if (imc <= 30) {
+            System.out.println("Você está com sobrepeso! Cuidado!");
+        } else if (imc <= 40) {
+            System.out.println("Você está com obesidade! Recomendamos buscar um médico!");
+        } else {
+            System.out.println("Você está com obesidade mórbida! Recomendamos buscar um médico com urgência!");            
+    }
+    scanner.close();
+    }
+}
+
 EXERCÍCIO 35
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite o tipo de carro que deseja alugar (popular ou luxo): ");
+        String tipo_carro = scanner.nextLine();
+        System.out.println("Digite por quantos dias alugou o carro: ");
+        int dias = scanner.nextInt();
+        System.out.println("Digite o número de km que percorreu: ");
+        double km = scanner.nextDouble();
+        double preco = 0;
+
+        if (tipo_carro.equals("popular")) {
+            preco += dias * 90; 
+            if (km <= 100) {
+                preco += km * 0.20;
+            } else {
+                preco += (100 * 0.20) + ((km - 100) * 0.10);
+            }
+
+        } else if (tipo_carro.equals("luxo")) {
+            preco += dias * 150; 
+            if (km <= 200) {
+                preco += km * 0.30;
+            } else {
+                preco += (200 * 0.30) + ((km - 200) * 0.25);
+            }
+        }
+        System.out.println("O preço total é: " + String.format ("%.2f", preco));
+        scanner.close();
+    }
+}
+
 EXERCÍCIO 36
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite quantas horas de atividades físicas o cliente teve esse mês: ");
+        int horas_atv = scanner.nextInt();
+        int pontos = 0;
+        double dinheiro = 0;
+
+        if (horas_atv <= 10) {
+            pontos = horas_atv * 2;
+        } else if (horas_atv <= 20) {
+            pontos = (10 *2) + (10 * 5) + (horas_atv - 20) * 10;
+        } else {
+            pontos = (10 * 2) + (10 * 5) + (10 * 10) + (horas_atv - 20) * 10;
+        }
+        
+        dinheiro = pontos * 0.05;
+        System.out.println("O cliente ganhou " + pontos + "pontos");
+        System.out.println("Os pontos convertidos acumularam R$" + String.format("%.2f", dinheiro));
+        scanner.close();
+    }
+}
+
 EXERCÍCIO 37
+import java.util.Scanner;
+public class Main {
+    public static void main (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Digite seu sexo ('M' para masculino ou 'F' para feminino): ");
+        char sexo = scanner.next().charAt(0);
+        System.out.println("Digite seu salário: R$ ");
+        double salario = scanner.nextDouble();
+        System.out.println("Digite a quantos anos você trabalha na empresa: ");
+        int anos_trabalho = scanner.nextInt();
+        double aumento;
+
+        if (sexo == 'F'){
+            if (anos_trabalho < 15){
+                aumento = 0.05;
+        } else if (anos_trabalho <= 20){
+            aumento = 0.12;
+        } else {
+            aumento = 0.23;
+        }
+        } else if (sexo == 'M'){
+            if (anos_trabalho < 20){
+                aumento = 0.03;
+            } else if (anos_trabalho <= 30){
+                aumento = 0.13;
+            } else {
+                aumento = 0.25;
+            }
+
+        }else{
+            System.out.println("Sexo inválido. Favor usar 'M' para masculino ou 'F' para feminino.");
+            scanner.close();
+            return;
+        }
+        double novo_salario = salario + (salario * aumento);
+        System.out.println("Seu salário reajustado é de R$ " + String.format("%.2f", novo_salario));
+        scanner.close();
+        }      
+    }
