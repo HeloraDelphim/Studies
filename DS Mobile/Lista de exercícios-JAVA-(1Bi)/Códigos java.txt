@@ -452,6 +452,29 @@ public class Main {
 }
 
 EXERCÍCIO 25
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 25:
+		Scanner scanner = new Scanner(System.in); 
+		System.out.println("Digite o valor do primeiro segmento de reta: ");
+		double seg1 = scanner.nextDouble();
+		System.out.println("Digite o valor do segundo segmento de reta: ");
+		double seg2 = scanner.nextDouble();
+		System.out.println("Digite o valor do terceiro segmento de reta: ");
+		double seg3 = scanner.nextDouble();
+		if (seg1 < seg2 + seg3 && seg2 < seg1 + seg3 && seg3 < seg1 + seg2) {
+			System.out.println("Os segmentos formam um triângulo.");
+		} else {
+			System.out.println("Os segmentos não formam um triângulo.");
+			
+		}
+		scanner.close(); 
+	}
+}
+
 EXERCÍCIO 26
 
 import java.util.Scanner;
@@ -549,7 +572,75 @@ public class Main {
 }
 
 EXERCÍCIO 30
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 30:
+		Scanner scanner = new Scanner(System.in); 
+		System.out.println("Digite o valor do primeiro segmento de reta: ");
+		double seg1 = scanner.nextDouble();
+		System.out.println("Digite o valor do segundo segmento de reta: ");
+		double seg2 = scanner.nextDouble();
+		System.out.println("Digite o valor do terceiro segmento de reta: ");
+		double seg3 = scanner.nextDouble();
+
+		if (seg1 < seg2 + seg3 && seg2 < seg1 + seg3 && seg3 < seg1 + seg2) {
+			System.out.println("Os segmentos formam um triângulo.");
+			if (seg1 == seg2 && seg2 == seg3) {
+				System.out.println("O triangulo é Equilatero");
+			} else if (seg1 == seg2 || seg2 == seg3 || seg1 == seg3) {
+				System.out.println("O triangulo é Isóceles");
+			} else {
+				System.out.println("O triangulo é Escaleno");
+			}
+		} else {
+			System.out.println("Os segmentos não formam um triângulo.");
+			
+		}
+		scanner.close(); 
+	}
+}
+
 EXERCÍCIO 31
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		//Ex 31:
+		Scanner scanner = new Scanner(System.in); 
+		System.out.println("Digite sua jogada (pedra, papel OU tesoura):");
+		String jogadaTxt = scanner.nextLine();
+		String jogadaPc = "";
+
+		if (Math.random() < 0.4) {
+			jogadaPc = "pedra";
+		} else if (Math.random() >= 0.4 && Math.random() < 0.7) {
+			jogadaPc = "papel";
+		} else {
+			jogadaPc = "tesoura";
+		}
+
+		if (jogadaTxt.equals(jogadaPc)) {
+			System.out.println("Sua jogada: " + jogadaTxt);	
+			System.out.println("Jogada do PC: " + jogadaPc);
+			System.out.println("Foi um empate, tente denovo!");;
+		} else if (jogadaTxt.equals("pedra") && jogadaPc.equals("tesoura") || jogadaTxt.equals("papel") && jogadaPc.equals("pedra") || jogadaTxt.equals("tesoura") && jogadaPc.equals("papel")) {
+			System.out.println("Sua jogada: " + jogadaTxt);	
+			System.out.println("Jogada do PC: " + jogadaPc);
+			System.out.println("Você ganhou, parabéns!");
+		} else if (jogadaTxt.equals("pedra") && jogadaPc.equals("papel") || jogadaTxt.equals("papel") && jogadaPc.equals("tesoura") || jogadaTxt.equals("tesoura") && jogadaPc.equals("pedra")) {
+			System.out.println("Sua jogada: " + jogadaTxt);	
+			System.out.println("Jogada do PC: " + jogadaPc);
+			System.out.println("Infelizmente você perdeu, jogue novamente!");
+		} else {
+			System.out.println("Até onde eu sei '" + jogadaTxt + "' não é uma jogada do Jokenpô. Por favor, digite opções validas.");
+		}
+		scanner.close(); 
+	}
+}
 
 EXERCÍCIO 32
 import java.util.Random;
