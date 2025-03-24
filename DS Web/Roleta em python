@@ -1,0 +1,12 @@
+import random
+i=6
+def roleta():
+    global i
+    n = random.randrange(0,i)
+    if n != 0:
+        i-=1
+    return n
+while roleta()  != 0:
+    print("Você viveu")
+else:
+    print("Você faleceu")
